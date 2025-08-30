@@ -15,6 +15,7 @@ declare global {
 }
 
 import headerCircleSm from '~/assets/header-circle-sm.svg';
+import headerCircleLg from '~/assets/header-circle-lg.svg';
 import djureLogo from '~/assets/djure-logo.svg';
 import DashedLine from './DashedLine';
 import iconEmail from '~/assets/footer-mail.svg';
@@ -210,7 +211,7 @@ const Header: React.FC = () => {
         <div className="flex flex-col items-end px-4 py-4">
           <button
             id="header-open-btn"
-            className="font-artine relative mb-[2.5rem] overflow-hidden rounded-full border bg-white p-6 text-[1.25rem] leading-[100%] font-bold lg:px-5 lg:py-3 lg:text-[1.5rem]"
+            className="font-artine relative mb-[2.5rem] overflow-hidden rounded-full border bg-white p-6 text-[1.25rem] leading-[100%] font-bold lg:text-[1.5rem]"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -237,115 +238,137 @@ const Header: React.FC = () => {
             </svg>
           </button>
 
-          <div className="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <path
-                d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C4.47715 20 0 24.4772 0 30C0 35.5229 4.47715 40 10 40H30C35.5229 40 40 35.5229 40 30C40 24.4772 35.5229 20 30 20C35.5229 20 40 15.5228 40 10C40 4.47715 35.5229 0 30 0L10 0Z"
-                fill="white"
-              />
-            </svg>
+          <div className="flex w-full items-end justify-between">
+            <SocialMedia setIsOpen={setIsOpen} />
 
-            <Link
-              to="#kategori-lomba"
-              onClick={() => {
-                setIsOpen(false);
-                window.competitionScrollTrigger?.disable();
-                window.scrollSmoother?.scrollTo('#kategori-lomba', true);
-                gsap.delayedCall(1, () =>
-                  window.competitionScrollTrigger?.enable()
-                );
-              }}
-            >
-              <button className="header-btn-rounded">Competition</button>
-            </Link>
-          </div>
+            <div className="flex flex-col items-end">
+              <div className="flex flex-col items-end lg:flex-row">
+                <div className="flex items-center lg:flex-row-reverse">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C4.47715 20 0 24.4772 0 30C0 35.5229 4.47715 40 10 40H30C35.5229 40 40 35.5229 40 30C40 24.4772 35.5229 20 30 20C35.5229 20 40 15.5228 40 10C40 4.47715 35.5229 0 30 0L10 0Z"
+                      fill="white"
+                    />
+                  </svg>
 
-          <div className="flex items-center">
-            <Link
-              to="#layout-kegiatan"
-              onClick={() => {
-                setIsOpen(false);
-                window.scrollSmoother?.scrollTo('#layout-kegiatan');
-              }}
-            >
-              <button className="header-btn">Kegiatan</button>
-            </Link>
+                  <Link
+                    to="#kategori-lomba"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.competitionScrollTrigger?.disable();
+                      window.scrollSmoother?.scrollTo('#kategori-lomba', true);
+                      gsap.delayedCall(1, () =>
+                        window.competitionScrollTrigger?.enable()
+                      );
+                    }}
+                  >
+                    <button className="header-btn-rounded">Competition</button>
+                  </Link>
+                </div>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <g clipPath="url(#clip0_2519_74184)">
-                <path
-                  d="M6.86292 0C2.46866 4.39425 3.21061e-08 10.3541 0 16.5685C-3.21061e-08 22.783 2.46866 28.7428 6.86291 33.1371C11.2572 37.5313 17.217 40 23.4315 40C29.6459 40 35.6057 37.5314 40 33.1371L6.86292 0Z"
-                  fill="white"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_2519_74184">
-                  <rect width="40" height="40" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
+                <div className="flex items-center">
+                  <Link
+                    to="#layout-kegiatan"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollSmoother?.scrollTo('#layout-kegiatan');
+                    }}
+                  >
+                    <button className="header-btn">Kegiatan</button>
+                  </Link>
 
-          <div className="flex items-center">
-            <Link
-              to="#denah-lokasi"
-              onClick={() => {
-                setIsOpen(false);
-                window.scrollSmoother?.scrollTo('#denah-lokasi', true);
-              }}
-            >
-              <button className="header-btn-rounded">Denah</button>
-            </Link>
-            <Link
-              to="#partner-section"
-              onClick={() => {
-                setIsOpen(false);
-                window.scrollSmoother?.scrollTo('#partner-section', true);
-              }}
-            >
-              <button className="header-btn">Partner</button>
-            </Link>
-          </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                  >
+                    <g clipPath="url(#clip0_2519_74184)">
+                      <path
+                        d="M6.86292 0C2.46866 4.39425 3.21061e-08 10.3541 0 16.5685C-3.21061e-08 22.783 2.46866 28.7428 6.86291 33.1371C11.2572 37.5313 17.217 40 23.4315 40C29.6459 40 35.6057 37.5314 40 33.1371L6.86292 0Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2519_74184">
+                        <rect width="40" height="40" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
 
-          <div>
-            <Link
-              to="#winner-section"
-              onClick={() => {
-                setIsOpen(false);
-                window.scrollSmoother?.scrollTo('#winner-section', true);
-              }}
-            >
-              <button className="header-btn-rounded">Winners</button>
-            </Link>
-          </div>
+                <Link
+                  to="#denah-lokasi"
+                  className="max-lg:hidden"
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollSmoother?.scrollTo('#denah-lokasi', true);
+                  }}
+                >
+                  <button className="header-btn-rounded">Denah</button>
+                </Link>
+              </div>
 
-          <div className="flex items-center">
-            <button className="header-btn">Contact Us</button>
+              <div className="flex flex-col items-end lg:flex-row">
+                <div className="flex items-center">
+                  <Link
+                    to="#denah-lokasi"
+                    className="lg:hidden"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollSmoother?.scrollTo('#denah-lokasi', true);
+                    }}
+                  >
+                    <button className="header-btn-rounded">Denah</button>
+                  </Link>
+                  <Link
+                    to="#partner-section"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollSmoother?.scrollTo('#partner-section', true);
+                    }}
+                  >
+                    <button className="header-btn">Partner</button>
+                  </Link>
+                </div>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <path
-                d="M34.142 34.1421C30.3913 37.8929 25.3042 40 19.9999 40V20.045C19.9757 25.5472 15.5078 30 10 30C4.47715 30 2.41411e-07 25.5228 0 20C-2.41411e-07 14.4772 4.47715 10 10 10C15.5078 10 19.9757 14.4528 19.9999 19.955L19.9999 0C25.3042 1.03279e-06 30.3913 2.10714 34.142 5.85787C37.8928 9.6086 39.9999 14.6957 39.9999 20C39.9999 25.3043 37.8928 30.3914 34.142 34.1421Z"
-                fill="#FE7522"
-              />
-            </svg>
+                <div>
+                  <Link
+                    to="#winner-section"
+                    onClick={() => {
+                      setIsOpen(false);
+                      window.scrollSmoother?.scrollTo('#winner-section', true);
+                    }}
+                  >
+                    <button className="header-btn-rounded">Winners</button>
+                  </Link>
+                </div>
+
+                <div className="flex items-center">
+                  <button className="header-btn">Contact Us</button>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                  >
+                    <path
+                      d="M34.142 34.1421C30.3913 37.8929 25.3042 40 19.9999 40V20.045C19.9757 25.5472 15.5078 30 10 30C4.47715 30 2.41411e-07 25.5228 0 20C-2.41411e-07 14.4772 4.47715 10 10 10C15.5078 10 19.9757 14.4528 19.9999 19.955L19.9999 0C25.3042 1.03279e-06 30.3913 2.10714 34.142 5.85787C37.8928 9.6086 39.9999 14.6957 39.9999 20C39.9999 25.3043 37.8928 30.3914 34.142 34.1421Z"
+                      fill="#FE7522"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -356,58 +379,71 @@ const Header: React.FC = () => {
 
           <div className="flex justify-between">
             <div>
-              <p className="font-artine text-[4.6rem] leading-[80%] font-bold uppercase">
+              <p className="font-artine text-[4.6rem] leading-[80%] font-bold text-balance uppercase lg:max-w-[60rem] lg:text-[16.6rem]">
                 Come <span className="font-roman font-normal italic">&</span>{' '}
                 Join Us
               </p>
 
-              <div className="mb-5 flex items-center gap-5 px-4 py-6 lg:mb-0 lg:gap-10">
-                <Link
-                  to="mailto:hello@rccd.space"
-                  target="_blank"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <img
-                    src={iconEmail}
-                    alt="email icon"
-                    className="h-[2rem] w-[2.5rem] lg:w-[2rem]"
-                  />
-                </Link>
-                <Link
-                  to="https://www.instagram.com/djure.2025/"
-                  target="_blank"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <img
-                    src={iconInstagram}
-                    alt="instagram icon"
-                    className="h-auto w-[2rem] lg:w-[2rem]"
-                  />
-                </Link>
-                <Link
-                  to="https://www.tiktok.com/@rccdubels"
-                  target="_blank"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <img
-                    src={iconTiktok}
-                    alt="tiktok icon"
-                    className="h-auto w-[2rem] lg:w-[2rem]"
-                  />
-                </Link>
+              <div className="lg:hidden">
+                <SocialMedia setIsOpen={setIsOpen} />
               </div>
             </div>
 
-            <img
-              src={headerCircleSm}
-              alt="2 circle decoration"
-              className="mb-10"
-            />
-            <div className="absolute bottom-0 h-12 w-full bg-[#36236F]"></div>
+            <picture className="relative top-8">
+              <source srcSet={headerCircleLg} media="(min-width: 1024px)" />
+              <img
+                src={headerCircleSm}
+                alt="2 circle decoration"
+                className="mb-10"
+              />
+            </picture>
+
+            <div className="absolute bottom-0 h-12 w-full bg-[#36236F] lg:h-4"></div>
           </div>
         </div>
       </div>
     </>
   );
 };
+
+function SocialMedia({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
+  return (
+    <div className="mb-5 flex items-center gap-5 px-4 py-6 lg:mb-0 lg:gap-10">
+      <Link
+        to="mailto:hello@rccd.space"
+        target="_blank"
+        onClick={() => setIsOpen(false)}
+      >
+        <img
+          src={iconEmail}
+          alt="email icon"
+          className="h-[2rem] w-[2.5rem] lg:h-[2.5rem] lg:w-[3.15rem]"
+        />
+      </Link>
+      <Link
+        to="https://www.instagram.com/djure.2025/"
+        target="_blank"
+        onClick={() => setIsOpen(false)}
+      >
+        <img
+          src={iconInstagram}
+          alt="instagram icon"
+          className="h-auto w-[2rem] lg:w-[2rem]"
+        />
+      </Link>
+      <Link
+        to="https://www.tiktok.com/@rccdubels"
+        target="_blank"
+        onClick={() => setIsOpen(false)}
+      >
+        <img
+          src={iconTiktok}
+          alt="tiktok icon"
+          className="h-auto w-[2rem] lg:w-[2rem]"
+        />
+      </Link>
+    </div>
+  );
+}
+
 export default Header;

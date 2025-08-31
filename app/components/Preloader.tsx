@@ -1,5 +1,3 @@
-'use client';
-
 import { useGSAP } from '@gsap/react';
 import gsap, { Observer, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import { useLocation } from 'react-router';

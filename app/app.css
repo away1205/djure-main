@@ -41,7 +41,7 @@ body {
   }
 
   .bg-checkboard {
-    @apply flex min-h-screen w-screen flex-col items-center overflow-x-visible bg-[rgb(255,255,255,0.85)] bg-[url(app/assets/grid-bg.png)] bg-size-[70rem_auto] bg-center bg-no-repeat bg-blend-lighten lg:bg-size-[120rem_auto] xl:bg-size-[150rem_auto];
+    @apply flex min-h-screen w-screen flex-col items-center overflow-x-visible bg-[rgb(255,255,255,0.85)] bg-[url(assets/grid-bg.png)] bg-size-[70rem_auto] bg-center bg-no-repeat bg-blend-lighten lg:bg-size-[120rem_auto] xl:bg-size-[150rem_auto];
   }
 
   .header-btn-rounded {

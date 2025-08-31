@@ -1,7 +1,9 @@
+import React from 'react';
 import ctaMobile from '~/assets/cta-mobile.png';
 import ctaDesktop from '~/assets/cta-desktop.png';
 import Button from '~/components/Button';
 import { Link } from 'react-router';
+import MagneticAnim from '~/components/MagneticAnim';
 
 function CTASection() {
   return (
@@ -28,9 +30,14 @@ function CTASection() {
           className="mt-[6rem] lg:mb-[10rem]"
           target="_blank"
         >
-          <Button className="text-white" buttonClassName="px-12 lg:px-[5.6rem]">
-            Talk to Us
-          </Button>
+          <MagneticAnim>
+            <Button
+              className="text-white"
+              buttonClassName="px-12 lg:px-[5.6rem]"
+            >
+              Talk to Us
+            </Button>
+          </MagneticAnim>
         </Link>
       </div>
     </div>

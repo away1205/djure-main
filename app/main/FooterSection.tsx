@@ -118,7 +118,7 @@ function FooterSection() {
 
       <div className="flex w-full items-center justify-center gap-2 bg-[white] px-4 py-6 lg:py-7">
         <p className="font-dm-sans text-sm font-medium text-black lg:text-2xl">
-          Designed with ❤️ by
+          Created with ❤️ by
         </p>
         <Link to="https://relyte.space" target="_blank">
           <img

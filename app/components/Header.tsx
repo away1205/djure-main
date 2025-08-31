@@ -238,8 +238,10 @@ const Header: React.FC = () => {
             </svg>
           </button>
 
-          <div className="flex w-full items-end justify-between">
-            <SocialMedia setIsOpen={setIsOpen} />
+          <div className="flex w-full items-end justify-end lg:justify-between">
+            <div className="hidden lg:block">
+              <SocialMedia setIsOpen={setIsOpen} />
+            </div>
 
             <div className="flex flex-col items-end">
               <div className="flex flex-col items-end lg:flex-row">
@@ -378,7 +380,7 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex justify-between">
-            <div>
+            <div className="mb-8 lg:mb-0">
               <p className="font-artine text-[4.6rem] leading-[80%] font-bold text-balance uppercase lg:max-w-[60rem] lg:text-[16.6rem]">
                 Come <span className="font-roman font-normal italic">&</span>{' '}
                 Join Us

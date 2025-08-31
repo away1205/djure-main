@@ -10,13 +10,15 @@ import CTASection from './CTASection';
 import FooterSection from './FooterSection';
 import HeroSection from './HeroSection';
 import Header from '~/components/Header';
+import Preloader from '~/components/Preloader';
 
 function Main() {
   return (
     <>
+      <Preloader />
       <Header />
       <ScrollSmootherWrapper>
-        <main className="">
+        <main className="" id="mainpage">
           <HeroSection />
           <CompetitionSection />
           <ActivityRundownSection />

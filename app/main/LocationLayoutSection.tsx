@@ -1,12 +1,16 @@
-'use client';
+import React from 'react';
 
 import underline from '~/assets/underline-denah.svg';
 import denahSekolah from '~/assets/denah-sekolah.png';
+import denahTenant from '~/assets/denah-tenant.png';
+import denahCamp from '~/assets/denah-camp.png';
+import denahPetaLokasi from '~/assets/denah-peta-lokasi.png';
 import folderDownload from '~/assets/folder-download.svg';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import { Link } from 'react-router';
 
 function LocationLayoutSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -36,9 +40,10 @@ function LocationLayoutSection() {
   } = usePrevNextButtons(emblaApi);
 
   const slides = [
-    { id: 'denah', content: denahSekolah },
-    { id: 'denah2', content: denahSekolah },
-    { id: 'denah3', content: denahSekolah },
+    { id: 'Denah Sekolah', content: denahSekolah },
+    { id: 'Lokasi Lomba secara Keseluruhan', content: denahPetaLokasi },
+    { id: 'Lokasi Tenant', content: denahTenant },
+    { id: 'Denah Camp Peserta', content: denahCamp },
   ];
 
   useEffect(() => {
@@ -126,9 +131,14 @@ function LocationLayoutSection() {
         </div>
 
         <button className="bg-violet relative left-1/2 mt-6 flex w-fit -translate-x-1/2 items-center gap-2 rounded-full px-10 py-2 text-white md:px-[3.25rem] md:py-[1.rem]">
-          <span className="text-[0.875rem] font-bold md:text-[1.25rem]">
-            Download PDF
-          </span>
+          <Link
+            to="https://drive.google.com/drive/folders/1lZG6kIn6SYfe4kqt-A0F_r2w9ngPxLgv?usp=sharing"
+            target="_blank"
+          >
+            <span className="text-[0.875rem] font-bold md:text-[1.25rem]">
+              Download PDF
+            </span>
+          </Link>
           <img
             src={folderDownload}
             alt="download icon"
@@ -142,6 +152,7 @@ function LocationLayoutSection() {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const usePrevNextButtons = (emblaApi: any) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -156,6 +167,7 @@ const usePrevNextButtons = (emblaApi: any) => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSelect = useCallback((emblaApi: any) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());

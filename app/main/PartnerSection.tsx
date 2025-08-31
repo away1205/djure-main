@@ -1,4 +1,4 @@
-import { IconArrowNarrowRight } from '@tabler/icons-react';
+import React from 'react';
 
 import amsterdamInstitute from '~/assets/sponsor-amsterdam-institute.svg';
 import angkasaPura from '~/assets/sponsor-angkasa-pura.svg';
@@ -14,6 +14,7 @@ import sponsorDecor from '~/assets/sponsor-decor.svg';
 import compassDecor from '~/assets/sponsor-compass.png';
 import Button from '~/components/Button';
 import { Link } from 'react-router';
+import MagneticAnim from '~/components/MagneticAnim';
 
 function PartnerSection() {
   const partners = [
@@ -67,7 +68,9 @@ function PartnerSection() {
             target="_blank"
             className="mt-8 cursor-pointer lg:mt-auto"
           >
-            <Button className="relative z-10">Be Our Sponsor</Button>
+            <MagneticAnim>
+              <Button className="relative z-10">Be Our Sponsor</Button>
+            </MagneticAnim>
           </Link>
 
           <img

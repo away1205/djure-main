@@ -1,4 +1,5 @@
 import { IconArrowNarrowRight } from '@tabler/icons-react';
+import React, { forwardRef } from 'react';
 import type { ReactNode, MouseEventHandler } from 'react';
 
 interface ButtonProps {
@@ -19,19 +20,22 @@ interface ButtonProps {
   icon?: ReactNode;
 }
 
-function Button({
-  children,
-  buttonClassName = '',
-  className = '',
-  onClick,
-  type = 'button',
-  disabled = false,
-  ariaLabel = 'Open',
-  showIcon = true,
-  icon,
-}: ButtonProps) {
+const Button = forwardRef<HTMLDivElement, ButtonProps>(function Button(
+  {
+    children,
+    buttonClassName = '',
+    className = '',
+    onClick,
+    type = 'button',
+    disabled = false,
+    ariaLabel = 'Open',
+    showIcon = true,
+    icon,
+  },
+  ref
+) {
   return (
-    <div className={`flex items-center ${className}`}>
+    <div ref={ref} className={`flex items-center ${className}`}>
       <button
         type={type}
         onClick={onClick}
@@ -54,6 +58,6 @@ function Button({
       )}
     </div>
   );
-}
+});
 
 export default Button;

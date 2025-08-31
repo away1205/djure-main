@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
 type TextTickerProps = {
@@ -15,7 +15,6 @@ type TextTickerProps = {
 function TextTicker({
   children,
   isSkew = false,
-  bgPrimary = 'primary',
   speed = 0.5,
   direction = 'right',
 }: TextTickerProps) {
@@ -24,7 +23,6 @@ function TextTicker({
   const secondText = useRef(null);
   const thirdText = useRef(null);
   let xPercent = 0;
-  let animDirection = -1;
   let animationFrameId: number;
 
   useEffect(() => {

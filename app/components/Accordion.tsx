@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Accordion = ({
   title,
   answer,
-  className,
 }: {
   title: string;
   answer: Array<string>;

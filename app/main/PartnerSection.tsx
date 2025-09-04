@@ -7,7 +7,14 @@ import indosat from '~/assets/sponsor-indosat.svg';
 import kaku from '~/assets/sponsor-kaku.svg';
 import kalbe from '~/assets/sponsor-kalbe.svg';
 import sosro from '~/assets/sponsor-sosro.svg';
+import a4Trophy from '~/assets/sponsor-trophy.png';
 import relyte from '~/assets/sponsor-relyte.svg';
+import hashtagPuang from '~/assets/sponsor-hashtag-puang.png';
+import maisonKolong from '~/assets/sponsor-maison.png';
+import scoutDubels from '~/assets/sponsor-scout-dubels.png';
+import lanyardMakassar from '~/assets/sponsor-lanyard.png';
+import club from '~/assets/sponsor-club.png';
+import zoel from '~/assets/sponsor-zoel.png';
 import TextTicker from '~/components/TextTicker';
 
 import sponsorDecor from '~/assets/sponsor-decor.svg';
@@ -49,6 +56,34 @@ function PartnerSection() {
     {
       name: 'Sosro',
       logo: sosro,
+    },
+    {
+      name: 'A4 Trophy',
+      logo: a4Trophy,
+    },
+    {
+      name: 'Hashtag Puang',
+      logo: hashtagPuang,
+    },
+    {
+      name: 'Maison de Kolong',
+      logo: maisonKolong,
+    },
+    {
+      name: 'Scout Dubels',
+      logo: scoutDubels,
+    },
+    {
+      name: 'Lanyard Makassar',
+      logo: lanyardMakassar,
+    },
+    {
+      name: 'Club Air Mineral',
+      logo: club,
+    },
+    {
+      name: 'Zoel Ramadhan',
+      logo: zoel,
     },
   ];
 

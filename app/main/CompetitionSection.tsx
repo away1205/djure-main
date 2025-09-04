@@ -52,11 +52,23 @@ const CompetitionSection: React.FC = () => {
     if (container && content) {
       const scrollLength = content.scrollWidth - container.clientWidth;
       const isMobile = window.innerWidth < 700; // 40rem = 640px
+      const isLargeScreen = window.innerWidth > 1279 && window.innerHeight < 1000; // 96rem = 1536px
+      console.log({ isMobile, isLargeScreen });
+      console.log({windowWidth: window.innerWidth, windowHeight: window.innerHeight})
+      let scrollTrigger;
+      if (isMobile){
+        scrollTrigger = '.competition-detail';
+      } else if (isLargeScreen){
+        scrollTrigger = containerRef.current;
+      } else {
+        scrollTrigger = '#competition-title';
+      }
+      
       const tween = gsap.to(content, {
         x: -scrollLength,
         ease: 'none',
         scrollTrigger: {
-          trigger: isMobile ? '.competition-detail' : '#competition-title',
+          trigger: scrollTrigger,
           start: 'top top',
           end: `+=${scrollLength}`,
           scrub: true,
